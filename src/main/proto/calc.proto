@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "dzamsheed.uz.grpc";
+option java_outer_classname = "Calculate";
+
+service Calculator {
+  rpc calculate (CalcRequest) returns (CalcResponse) {}
+}
+
+message CalcRequest {
+  int32 firstNumber = 1;
+  string operator = 2;
+  int32 secondNumber = 3;
+}
+
+message CalcResponse {
+  double result = 1;
+}
